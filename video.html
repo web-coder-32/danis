@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player - YouTube Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="https://www.youtube.com/s/desktop/7c155e84/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header>
+        <div class="left-section">
+            <i class="fas fa-bars" id="menu"></i>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo" class="logo">
+        </div>
+        <div class="search-section">
+            <form class="search-bar">
+                <input type="text" placeholder="Search">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+            <i class="fas fa-microphone"></i>
+        </div>
+        <div class="right-section">
+            <i class="fas fa-video"></i>
+            <i class="fas fa-th"></i>
+            <i class="fas fa-bell"></i>
+            <div class="profile-container">
+                <img src="https://i.pravatar.cc/150?img=12" alt="Profile Picture" class="profile-pic" id="profilePic">
+                <div class="profile-dropdown">
+                    <div class="profile-header">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Profile Picture" class="dropdown-profile-pic">
+                        <div class="profile-info">
+                            <h3>John Doe</h3>
+                            <p>john.doe@example.com</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-items">
+                        <a href="#"><i class="fas fa-user"></i> Your Channel</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="video-page">
+        <div class="video-player-container">
+            <div class="video-player">
+                <video controls>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-info">
+                <h1 class="video-title">Big Buck Bunny - Sample Video</h1>
+                <div class="video-stats">
+                    <div class="views-date">
+                        <span>1.2M views</span>
+                        <span>•</span>
+                        <span>Jan 31, 2025</span>
+                    </div>
+                    <div class="actions">
+                        <button><i class="fas fa-thumbs-up"></i> 100K</button>
+                        <button><i class="fas fa-thumbs-down"></i> 1K</button>
+                        <button><i class="fas fa-share"></i> Share</button>
+                        <button><i class="fas fa-save"></i> Save</button>
+                        <button><i class="fas fa-ellipsis-h"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="channel-info">
+                <div class="channel-header">
+                    <img src="https://i.pravatar.cc/150?img=50" alt="Channel Avatar" class="channel-avatar">
+                    <div class="channel-details">
+                        <h3>Sample Channel</h3>
+                        <p>1.2M subscribers</p>
+                    </div>
+                    <button class="subscribe-btn">Subscribe</button>
+                </div>
+                <div class="video-description">
+                    <p>This is a sample video description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Click show more to see the full description.</p>
+                    <button class="show-more">Show more</button>
+                </div>
+            </div>
+        </div>
+        <div class="suggested-videos">
+            <h3>Up next</h3>
+            <div class="video-list" id="suggestedVideosList">
+                <!-- Suggested videos will be added here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="video.js"></script>
+</body>
+</html>

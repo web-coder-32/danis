@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="https://www.youtube.com/s/desktop/7c155e84/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="left-section">
+            <i class="fas fa-bars" id="menu"></i>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo" class="logo">
+        </div>
+        <div class="search-section">
+            <form class="search-bar">
+                <input type="text" placeholder="Search">
+                <button><i class="fas fa-search"></i></button>
+            </form>
+            <i class="fas fa-microphone"></i>
+        </div>
+        <div class="right-section">
+            <i class="fas fa-video"></i>
+            <i class="fas fa-th"></i>
+            <i class="fas fa-bell"></i>
+            <div class="profile-container">
+                <img src="https://i.pravatar.cc/150?img=12" alt="Profile Picture" class="profile-pic" id="profilePic">
+                <div class="profile-dropdown">
+                    <div class="profile-header">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Profile Picture" class="dropdown-profile-pic">
+                        <div class="profile-info">
+                            <h3>John Doe</h3>
+                            <p>john.doe@example.com</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-items">
+                        <a href="#"><i class="fas fa-user"></i> Your Channel</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="nav-links">
+                <a href="#" class="active"><i class="fas fa-home"></i>Home</a>
+                <a href="#"><i class="fas fa-compass"></i>Explore</a>
+                <a href="#"><i class="fas fa-play-circle"></i>Subscriptions</a>
+                <a href="#"><i class="fas fa-folder"></i>Library</a>
+                <a href="#"><i class="fas fa-history"></i>History</a>
+            </div>
+        </div>
+
+        <!-- Videos Grid -->
+        <div class="videos-container">
+            <div class="video-grid" id="videoGrid">
+                <!-- Videos will be dynamically added here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    height: 56px;
+    z-index: 100;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 20px;
+    margin-left: 1rem;
+}
+
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 500px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px 0 0 20px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    padding: 0.5rem 1.5rem;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+/* Profile Styles */
+.profile-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.profile-container:hover .profile-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-header {
+    padding: 16px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dropdown-profile-pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #030303;
+}
+
+.profile-info p {
+    font-size: 14px;
+    color: #606060;
+}
+
+.dropdown-items {
+    padding: 8px 0;
+}
+
+.dropdown-items a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #030303;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-items a:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown-items i {
+    width: 24px;
+    margin-right: 12px;
+    color: #606060;
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    margin-top: 56px;
+    height: calc(100vh - 56px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    background-color: white;
+    padding: 1rem 0;
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    color: #030303;
+    gap: 1.5rem;
+}
+
+.nav-links a:hover {
+    background-color: #f2f2f2;
+}
+
+.nav-links a.active {
+    background-color: #e5e5e5;
+}
+
+.nav-links i {
+    font-size: 1.2rem;
+}
+
+/* Videos Grid Styles */
+.videos-container {
+    margin-left: 240px;
+    padding: 2rem;
+    width: calc(100% - 240px);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.video-card {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.video-info {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+.channel-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.video-details h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.video-details p {
+    font-size: 0.9rem;
+    color: #606060;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .search-bar input {
+        width: 400px;
+    }
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .search-bar input {
+        width: 300px;
+    }
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+    
+    .sidebar {
+        width: 70px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 99;
+    }
+    
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    
+    .nav-links a span {
+        display: none;
+    }
+    
+    .videos-container {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .search-bar input {
+        width: 200px;
+    }
+    
+    .right-section i {
+        display: none;
+    }
+    
+    .right-section i:last-child,
+    .right-section .profile-pic {
+        display: block;
+    }
+    
+    .video-grid {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-section {
+        display: none;
+    }
+    
+    header {
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-info {
+        font-size: 0.9rem;
+    }
+    
+    .video-details h3 {
+        font-size: 0.95rem;
+    }
+    
+    .video-details p {
+        font-size: 0.8rem;
+    }
+    
+    .logo {
+        height: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-dropdown {
+        width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-dropdown {
+        width: 260px;
+        right: -20px;
+    }
+    
+    .profile-pic {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Add overlay styles */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    display: none;
+}
+
+.sidebar-overlay.active {
+    display: block;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Video card link styles */
+.video-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Fix sidebar styles */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 56px;
+        left: 0;
+        height: calc(100vh - 56px);
+        width: 240px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 99;
+        background: white;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .videos-container {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 1rem;
+    }
+
+    .nav-links a span {
+        display: inline !important;
+    }
+}
+
+/* Improve header responsiveness */
+@media (max-width: 576px) {
+    .search-section {
+        display: none;
+    }
+
+    .right-section {
+        gap: 16px;
+    }
+
+    .right-section i:not(:last-child) {
+        display: none;
+    }
+}
+
+/* Add smooth transitions */
+.sidebar,
+.videos-container {
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.nav-links a:hover {
+    background-color: #f2f2f2;
+    transition: background-color 0.2s ease;
+}
+
+.search-bar button:hover {
+    background-color: #e6e6e6;
+    transition: background-color 0.2s ease;
+}
+
+/* Improve video card layout */
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: border-radius 0.2s ease;
+}
+
+.video-info {
+    padding: 0.8rem 0;
+}
+
+.channel-icon {
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+}
+
+.video-details {
+    overflow: hidden;
+}
+
+.video-details h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.video-details p {
+    margin: 0;
+    color: #606060;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
